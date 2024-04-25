@@ -1,5 +1,5 @@
 .{
-    .name = "zig-im3d",
+    .name = "im3d",
     .version = "2024.1.1",
     .paths = .{"."},
 }

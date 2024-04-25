@@ -16,7 +16,6 @@ pub fn build(b: *Build) void {
     im3d_c_cpp.linkLibC();
     im3d_c_cpp.addCSourceFiles(.{
         .files = &.{
-            // Recast
             "im3d_glue.cpp",
             "im3d.cpp",
         },

@@ -876,7 +876,7 @@ pub const Im3d = struct {
         /// e.g. void Im3d_Draw(const DrawList
         ///&
         /// _drawList)
-        drawCallback: [*c]DrawPrimitivesCallback = null,
+        drawCallback:  *const DrawPrimitivesCallback = null,
 
         extern fn _1_Im3d_AppData_setCullFrustum_(self: *AppData, _viewProj: *const Mat4, _ndcZNegativeOneToOne: bool) void;
         /// Extract cull frustum planes from the view-projection matrix.
