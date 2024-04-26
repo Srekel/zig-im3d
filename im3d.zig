@@ -641,6 +641,11 @@ pub const Im3d = struct {
 
         extern fn _5_Im3d_Color_init_(self: *Color, _r: f32, _g: f32, _b: f32, _a: f32) void;
         pub const init5 = _5_Im3d_Color_init_;
+        pub fn init5b(_r: f32, _g: f32, _b: f32, _a: f32) Color {
+            var color: Color = undefined;
+            Color.init5(&color, _r, _g, _b, _a);
+            return color;
+        }
 
         // syntax errors:
         // pub fn set(self: *Color, _i: c_int, _val: f32) void {
@@ -876,7 +881,7 @@ pub const Im3d = struct {
         /// e.g. void Im3d_Draw(const DrawList
         ///&
         /// _drawList)
-        drawCallback:  *const DrawPrimitivesCallback = null,
+        drawCallback: *const DrawPrimitivesCallback = null,
 
         extern fn _1_Im3d_AppData_setCullFrustum_(self: *AppData, _viewProj: *const Mat4, _ndcZNegativeOneToOne: bool) void;
         /// Extract cull frustum planes from the view-projection matrix.
