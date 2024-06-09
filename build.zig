@@ -25,7 +25,7 @@ pub fn build(b: *Build) void {
     b.installArtifact(im3d_c_cpp);
 
     var im3d = b.addModule("im3d", .{
-        .root_source_file = .{ .path = "im3d.zig" },
+        .root_source_file = b.path("im3d.zig"),
         .target = target,
         .optimize = optimize,
     });
