@@ -855,7 +855,7 @@ pub const Im3d = struct {
         /// World space cursor ray direction.
         m_cursorRayDirection: Vec3,
         /// World space 'up' vector.
-        m_worldUp: Vec3 = Vec3.init(0, 1, 0),
+        m_worldUp: Vec3 = .{ .x = 0, .y = 1, .z = 0 },
         /// World space render origin (camera position).
         m_viewOrigin: Vec3,
         /// World space view direction.
@@ -881,7 +881,7 @@ pub const Im3d = struct {
         /// e.g. void Im3d_Draw(const DrawList
         ///&
         /// _drawList)
-        drawCallback: *const DrawPrimitivesCallback = null,
+        drawCallback: ?*const DrawPrimitivesCallback = null,
 
         extern fn _1_Im3d_AppData_setCullFrustum_(self: *AppData, _viewProj: *const Mat4, _ndcZNegativeOneToOne: bool) void;
         /// Extract cull frustum planes from the view-projection matrix.
